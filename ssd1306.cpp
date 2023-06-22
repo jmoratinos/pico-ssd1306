@@ -160,6 +160,10 @@ namespace pico_ssd1306 {
         inverted = !inverted;
     }
 
+    bool SSD1306::isInverted() {
+        return inverted;
+    }
+
     void SSD1306::cmd(unsigned char command) {
         // 0x00 is a byte indicating to ssd1306 that a command is being sent
         uint8_t data[2] = {0x00, command};
@@ -176,4 +180,7 @@ namespace pico_ssd1306 {
         this->frameBuffer.setBuffer(buffer);
     }
 
+    FrameBuffer* SSD1306::getFrameBuffer() {
+        return &frameBuffer;
+    }
 }

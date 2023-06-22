@@ -107,6 +107,10 @@ namespace pico_ssd1306 {
         /// \param buffer - pointer to a new buffer
         void setBuffer(unsigned char *buffer);
 
+        /// @brief \brief Get current FrameBuffer
+        /// @return 
+        FrameBuffer* getFrameBuffer();
+
         /// \brief Flips the display
         /// \param orientation - 0 for not flipped, 1 for flipped display
         void setOrientation(bool orientation);
@@ -117,6 +121,9 @@ namespace pico_ssd1306 {
 
         /// \brief Inverts screen on hardware level. Way more efficient than setting buffer to all ones and then using WriteMode subtract.
         void invertDisplay();
+
+        /// \brief Is the screen inverted?
+        bool isInverted();
 
         /// \brief Sets display contrast according to ssd1306 documentation
         /// \param contrast - accepted values of 0 to 255 to set the contrast
